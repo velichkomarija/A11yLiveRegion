@@ -3,6 +3,7 @@ package ru.accessibility.liveregion
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View.ACCESSIBILITY_LIVE_REGION_POLITE
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,10 +13,10 @@ import android.widget.TextView
  *
  * У него можно указать 3 значения:
  * none — ничего не обновлять, значение по умолчанию.
- * polite — если значение обновилось, но TalkBack ещё воспроизводит старое значение,
- * новое значение зачитается после того, как TalkBack закончит говорить.
+ * polite — если значение обновилось, но TalkBack ещё озвучивает что-то в интерфейсе,
+ *      новое значение зачитается после того, как TalkBack закончит говорить.
  * assertive — противоположное значению polite. При обновлении значения TalkBack перестанет
- * зачитывать старое значение и сразу начнет зачитывать новое.
+ *      зачитывать любую озвучку и сразу начнет зачитывать новое значение. Используется крайне редко.
  */
 
 class MainActivity : AppCompatActivity() {
@@ -39,6 +40,11 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun addMeal() {
+
+//        if (currentFood == 0) {
+//            label.accessibilityLiveRegion = ACCESSIBILITY_LIVE_REGION_POLITE
+//        }
+
         if (currentFood < MAX_COUNT) {
             currentFood += PORTION
             label.text = getString(R.string.meal_count, currentFood)
