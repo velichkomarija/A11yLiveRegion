@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ненасытный кот</string>
+    <string name="add_meal_text">Покормить кота</string>
+    <string name="meal_count">Мышкин съел %d граммов корма</string>
+    <string name="cat_need_to_eat_text">Кот, который хочет кушать</string>
+    <string name="positive_cat">Счастливый наевшийся кот</string>
+    <string name="max_meal">Мышкин наелся!</string>
+</resources>
